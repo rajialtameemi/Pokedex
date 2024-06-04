@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex Raji</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon" href="/Pokedex.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <img src="/Pokedex.jpg" alt="Logo" class="logo" />
+      <h1>Pokedex</h1>
+      <div class="controls">
+        <input type="text" id="search" placeholder="Search Pokemon" />
+        <select id="type-filter">
+          <option value="">All Types</option>
+          <option value="fire">Fire</option>
+          <option value="water">Water</option>
+          <option value="grass">Grass</option>
+        </select>
+        <select id="sort-options">
+          <option value="id">Sort by ID</option>
+          <option value="name">Sort by Name</option>
+          <option value="hp">Sort by HP</option>
+        </select>
+        <button id="dark-mode-toggle">Dark Mode</button>
+      </div>
+    </header>
+    <main>
+      <div id="pokemon-container"></div>
+      <button id="load-more">Load More Pokemon</button>
+    </main>
+    <div id="pokemon-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button"><i class="fas fa-times"></i></span>
+        <div id="pokemon-details"></div>
+        <div class="navigation-buttons">
+          <button id="prev-button">Previous</button>
+          <button id="next-button">Next</button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Created by Raji Al-Tameemi</p>
+    </footer>
+    <script src="/script.js"></script>
+  </body>
+</html>

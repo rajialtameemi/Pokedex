@@ -1,0 +1,251 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #ff0000;
+  color: white;
+  text-align: center;
+}
+
+header h1 {
+  margin: 10px 0;
+  font-size: 24px;
+}
+
+.logo {
+  width: 50px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.controls select,
+.controls button,
+#search {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+main {
+  padding: 20px;
+}
+
+#pokemon-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.pokemon-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pokemon-card img {
+  width: 100px;
+  height: 100px;
+}
+
+#load-more {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff0000;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#load-more:hover {
+  background-color: #cc0000;
+  transform: scale(1.05);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  text-align: center;
+  animation: slide-down 0.5s ease-out;
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ff0000;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.close-button:hover {
+  color: #cc0000;
+  transform: scale(1.2);
+}
+
+.close-button i {
+  pointer-events: none;
+}
+
+.large-pokemon-img {
+  width: 80%;
+  max-width: 300px;
+  margin: 20px 0;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.navigation-buttons button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff0000;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.navigation-buttons button:hover {
+  background-color: #cc0000;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.stat .label {
+  flex: 1;
+  text-align: left;
+}
+
+.stat .value {
+  flex: 1;
+  text-align: right;
+}
+
+.progress-bar {
+  height: 10px;
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #ff0000;
+  transition: width 0.3s;
+}
+
+.dark-mode {
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode .pokemon-card {
+  background-color: #444;
+  color: white;
+}
+
+.dark-mode .modal-content {
+  background-color: #555;
+  color: white;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #ff0000;
+  color: white;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .controls {
+    margin-top: 0;
+  }
+
+  #pokemon-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  #pokemon-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .large-pokemon-img {
+    width: 300px;
+  }
+}
